@@ -6,12 +6,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
-      function paymentSuccessful(value) {
-        alert(value);
+      window.addEventListener('message', receiveMessage);
+      function receiveMessage(e) {
+        var messageEle = document.getElementById('message')
+
+        // Update the div element to display the message.
+        messageEle.innerHTML = "Payment made with Tracking: " + e.data;
       }
     </script>
   </head>
   <body>
-    <input type="button" class="btn btn-primary" value="Open a Popup Window" onclick="window.open('http://localhost:3000/session?token=TaE9OJnCtsYWW_d7Yjnqlg==','popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
+    <input type="button" class="btn btn-primary" value="Make a Payment" onclick="window.open('http://localhost:3000/session?token=TaE9OJnCtsYWW_d7Yjnqlg==','popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
+    <div id="message"></div>
   </body>
 </html>
