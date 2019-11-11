@@ -11,12 +11,12 @@
         var messageEle = document.getElementById('message')
         console.log(e.data)
         // Update the div element to display the message.
-        messageEle.innerHTML = "Loan # "+e.data.loan_number+" payment made with tracking: " + e.data.tracking_number;
+        messageEle.innerHTML = "Payment(s) where made: "+JSON.stringify(e.data);
       }
     </script>
   </head>
   <body>
-    <input type="button" class="btn btn-primary" value="Make a Payment" onclick="window.open('http://localhost:3000/session?token=bXrFIrFD1eM8rrUMr5nIHg==','popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
+    <input type="button" class="btn btn-primary" value="Make a Payment" onclick="window.open('http://localhost:3000/session?token=BMiL_pVqYMF0aOwC8ZV7vQ==','popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
     <div id="message"></div>
   </body>
 </html>
