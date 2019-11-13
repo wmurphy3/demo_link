@@ -16,57 +16,7 @@
     </script>
   </head>
   <body>
-    <input type="button" class="btn btn-primary" value="Make a Payment" onclick="window.open('http://localhost:3000/session?token=WvOQdPtXUbrXU--iBtn0ZQ==','popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
+    <input type="button" class="btn btn-primary" value="Make a Payment" onclick="window.open('http://localhost:3000/session?token=TDPsTSM6wTFa5Ren0J5awQ==','popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
     <div id="message"></div>
-    <div class="accordion" id="accordionExample">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h2 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Step 1 - Token
-            </button>
-          </h2>
-        </div>
-
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="card-body">
-            See documentation here: <URL>
-            <br><i>Note: You will be given a UAT URL, Encryption key, username and password</i>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Step 2 - Set button with token
-            </button>
-          </h2>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-          <div class="card-body">
-            <pre>
-              <code>window.open('http://localhost:3000/session?token=WvOQdPtXUbrXU--iBtn0ZQ==','popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');</code>
-              <br><i>Note: By opening the window, we are able to communicate data(Tracking Numbers and Loan Numbers) back after a payment is made</i>
-            </pre>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Step 3 - Try it!
-            </button>
-          </h2>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-          <div class="card-body">
-            <input type="button" class="btn btn-primary" value="Make a Payment" onclick="window.open('https://bsi-uat.herokuapp.com/session?token=BMiL_pVqYMF0aOwC8ZV7vQ==','popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
-            <div id="message"></div>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
