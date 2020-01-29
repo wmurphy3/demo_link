@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-      window.addEventListener('message', receiveMessage);
-      function receiveMessage(e) {
-        var messageEle = document.getElementById('message')
-        // Update the div element to display the message.
-        messageEle.innerHTML = "Payment(s) where made: "+JSON.stringify(e.data);
+    <script type="text/javascript" src="http://localhost:8080/test/css-popup/css-pop.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="http://localhost:8080/test/css-popup/styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+      var popUpWindow;
+      function popup(n) {
+        popUpWindow = window.open(n, 'popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
       }
+      function foo(obj){
+        test1 = "https://f0c19f23.ngrok.io/session?token=vFW_JBRJZbLz0bEPprwAlQ==";
+        popUpWindow.document.write('<iframe height="1000" allowTransparency="true" frameborder="0" scrolling="yes" style="width:100%;" src="'+test1+'" type= "text/javascript"></iframe>');
+      }
+
+      $(function() {
+        window.addEventListener("message", function(event) {
+          $('#result').html("Child window says: " + event.data);
+        }, false);
+      });
     </script>
   </head>
   <body>
-    <input type="button" class="btn btn-primary" value="Make a Payment" onclick="window.open('http://localhost:3000/session?token=TDPsTSM6wTFa5Ren0J5awQ==','popUpWindow','height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
-    <div id="message"></div>
+    <a href="#" onclick="popup('popUpDiv');foo(this);">Try Me!</a>
+    <div id="result"></div>
   </body>
 </html>
