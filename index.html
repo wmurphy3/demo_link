@@ -9,7 +9,9 @@
           var top = (screen.height/2)-(520/2);
           var popUpWindow = window.open("popUpDiv", 'popUpWindow','height=520,width=800,left='+left+',top='+top+',resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
           var test1 = "https://texas-legal-uat.herokuapp.com/session?token=X3pM4Qw2yriAoFzl9ngUcQ==";
-          popUpWindow.document.write('<iframe height="520" allowTransparency="true" frameborder="0" scrolling="yes" style="width:100%;" src="'+test1+'" type= "text/javascript"></iframe>');
+//           popUpWindow.document.write('<iframe height="520" allowTransparency="true" frameborder="0" scrolling="yes" style="width:100%;" src="'+test1+'" type= "text/javascript"></iframe>');
+          
+          s = "window.open('https://texas-legal-uat.herokuapp.com/session?token=" + "X3pM4Qw2yriAoFzl9ngUcQ==" + "', 'popUpWindow', 'height=1000,width=1500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');";
         });
 
         window.addEventListener("message", function(event) {
